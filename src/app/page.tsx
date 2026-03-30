@@ -140,6 +140,23 @@ export default function LandingPage() {
             Join 2,000+ plumbers already using PlumberPay
           </p>
         </div>
+        {/* Phone mockup */}
+        <div className="hidden md:block absolute right-8 lg:right-16 bottom-0 w-64 lg:w-72">
+          <div className="bg-white rounded-t-3xl shadow-2xl p-4 pb-0">
+            <div className="flex items-center gap-2 mb-3">
+              <div className="w-6 h-6 bg-[#2563eb] rounded-md flex items-center justify-center text-xs text-white">🔧</div>
+              <span className="text-xs font-bold text-[#1e3a5f]">PlumberPay</span>
+            </div>
+            <div className="bg-[#f8fafc] rounded-xl p-3 mb-2">
+              <div className="text-[10px] text-gray-400 mb-1">INVOICE PP-001</div>
+              <div className="text-sm font-bold text-[#1e3a5f]">$1,242.00</div>
+              <div className="text-[10px] text-gray-500">Sarah Johnson · Water Heater</div>
+            </div>
+            <div className="bg-[#10b981] text-white text-center py-2 rounded-lg text-xs font-semibold">
+              ✓ Paid
+            </div>
+          </div>
+        </div>
         {/* Decorative water drops */}
         <div className="absolute top-20 left-10 w-3 h-3 bg-blue-300/20 rounded-full" />
         <div className="absolute top-40 right-20 w-5 h-5 bg-blue-300/15 rounded-full" />
@@ -288,16 +305,61 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Testimonial */}
+      {/* Comparison */}
+      <section className="bg-white py-16">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-[#1e3a5f] mb-3">Why plumbers switch to PlumberPay</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="card border-2 border-red-100 bg-red-50/30">
+              <h3 className="font-bold text-red-400 mb-4">❌ Before PlumberPay</h3>
+              <ul className="space-y-3 text-sm text-gray-600">
+                <li className="flex items-start gap-2"><span className="text-red-400">✗</span> Scribble a receipt at the job site</li>
+                <li className="flex items-start gap-2"><span className="text-red-400">✗</span> &ldquo;I&apos;ll send you an invoice later&rdquo;</li>
+                <li className="flex items-start gap-2"><span className="text-red-400">✗</span> Chase payments for weeks</li>
+                <li className="flex items-start gap-2"><span className="text-red-400">✗</span> Sunday night invoice marathons</li>
+                <li className="flex items-start gap-2"><span className="text-red-400">✗</span> Lost receipts, missed revenue</li>
+              </ul>
+            </div>
+            <div className="card border-2 border-green-100 bg-green-50/30">
+              <h3 className="font-bold text-[#10b981] mb-4">✅ After PlumberPay</h3>
+              <ul className="space-y-3 text-sm text-gray-600">
+                <li className="flex items-start gap-2"><span className="text-[#10b981]">✓</span> Professional invoice in 30 seconds</li>
+                <li className="flex items-start gap-2"><span className="text-[#10b981]">✓</span> Send payment link before you leave</li>
+                <li className="flex items-start gap-2"><span className="text-[#10b981]">✓</span> Get paid in 1-2 days, not weeks</li>
+                <li className="flex items-start gap-2"><span className="text-[#10b981]">✓</span> Zero bookkeeping headaches</li>
+                <li className="flex items-start gap-2"><span className="text-[#10b981]">✓</span> Every dollar tracked automatically</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
       <section className="bg-[#1e3a5f] py-16">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <div className="text-4xl mb-6">💬</div>
-          <blockquote className="text-xl md:text-2xl text-white font-medium mb-6 leading-relaxed">
-            &ldquo;I used to spend Sunday nights doing invoices. Now I send them before I leave the job site.
-            Got paid $4,200 last week without a single follow-up call.&rdquo;
-          </blockquote>
-          <div className="text-blue-200">
-            <span className="font-semibold">Mike R.</span> — Solo plumber, Austin TX
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <div className="text-3xl mb-4">💬</div>
+              <blockquote className="text-lg text-white font-medium mb-4 leading-relaxed">
+                &ldquo;I used to spend Sunday nights doing invoices. Now I send them before I leave the job site.
+                Got paid $4,200 last week without a single follow-up call.&rdquo;
+              </blockquote>
+              <div className="text-blue-200">
+                <span className="font-semibold">Mike R.</span> — Solo plumber, Austin TX
+              </div>
+            </div>
+            <div>
+              <div className="text-3xl mb-4">💬</div>
+              <blockquote className="text-lg text-white font-medium mb-4 leading-relaxed">
+                &ldquo;My guys hated QuickBooks. Too many steps. With PlumberPay they actually send invoices
+                now. Revenue is up 30% just from not forgetting to bill.&rdquo;
+              </blockquote>
+              <div className="text-blue-200">
+                <span className="font-semibold">Dave K.</span> — Owner, K&amp;Sons Plumbing, Denver CO
+              </div>
+            </div>
           </div>
         </div>
       </section>

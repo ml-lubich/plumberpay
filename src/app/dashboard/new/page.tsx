@@ -101,19 +101,19 @@ export default function NewInvoicePage() {
       {/* Step 1: Select Service */}
       {step === 'service' && (
         <div>
-          <h1 className="text-2xl font-bold text-[#1e3a5f] mb-2">What service?</h1>
-          <p className="text-gray-500 text-sm mb-6">Pick the type of job</p>
+          <h1 className="text-2xl font-bold text-[#1e3a5f] mb-2">What&apos;s the job?</h1>
+          <p className="text-gray-500 text-sm mb-6">Tap the service — prices auto-fill</p>
           <div className="grid grid-cols-2 gap-3">
             {SERVICE_TYPES.map((svc) => (
               <button
                 key={svc.id}
                 onClick={() => handleSelectService(svc.id)}
-                className="card hover:shadow-md transition-all text-left active:scale-[0.98]"
+                className="card hover:shadow-md hover:border-[#2563eb] border-2 border-transparent transition-all text-left active:scale-[0.97] min-h-[100px]"
               >
-                <div className="text-3xl mb-2">{svc.icon}</div>
-                <div className="font-semibold text-[#1e3a5f] text-sm">{svc.name}</div>
+                <div className="text-4xl mb-2">{svc.icon}</div>
+                <div className="font-bold text-[#1e3a5f]">{svc.name}</div>
                 <div className="text-xs text-gray-400 mt-1">
-                  {svc.defaultItems.length} items
+                  from ${Math.min(...svc.defaultItems.map(i => i.unitPrice))}
                 </div>
               </button>
             ))}
@@ -248,7 +248,35 @@ export default function NewInvoicePage() {
       {step === 'customer' && (
         <div>
           <h1 className="text-2xl font-bold text-[#1e3a5f] mb-2">Customer info</h1>
-          <p className="text-gray-500 text-sm mb-6">Who is this invoice for?</p>
+          <p className="text-gray-500 text-sm mb-4">Who is this invoice for?</p>
+
+          {/* Quick-pick recent customers */}
+          <div className="mb-4">
+            <div className="text-xs text-gray-400 font-medium mb-2">RECENT CUSTOMERS</div>
+            <div className="flex gap-2 overflow-x-auto pb-2">
+              {[
+                { name: 'Sarah Johnson', phone: '(555) 123-4567', email: 'sarah@email.com' },
+                { name: 'Mike Torres', phone: '(555) 234-5678', email: 'mike.t@email.com' },
+                { name: 'Linda Chen', phone: '(555) 345-6789', email: 'linda.chen@email.com' },
+              ].map((c) => (
+                <button
+                  key={c.name}
+                  onClick={() => {
+                    setCustomerName(c.name)
+                    setCustomerEmail(c.email)
+                    setCustomerPhone(c.phone)
+                  }}
+                  className={`shrink-0 px-3 py-2 rounded-xl text-sm font-medium border-2 transition active:scale-[0.97] ${
+                    customerName === c.name
+                      ? 'border-[#2563eb] bg-blue-50 text-[#2563eb]'
+                      : 'border-gray-200 text-gray-600 hover:border-gray-300'
+                  }`}
+                >
+                  {c.name.split(' ')[0]}
+                </button>
+              ))}
+            </div>
+          </div>
 
           <div className="space-y-4 mb-6">
             <div>

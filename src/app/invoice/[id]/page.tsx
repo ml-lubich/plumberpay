@@ -204,12 +204,27 @@ export default function InvoiceViewPage() {
         )}
 
         {invoice.status === 'paid' && (
-          <div className="text-center py-6">
-            <div className="text-4xl mb-2">✅</div>
-            <div className="font-bold text-[#10b981] text-lg">Payment Received</div>
+          <div className="text-center py-8">
+            <div className="w-16 h-16 bg-[#d1fae5] rounded-full flex items-center justify-center text-3xl mx-auto mb-3">✅</div>
+            <div className="font-bold text-[#10b981] text-xl mb-1">Payment Received</div>
             <div className="text-sm text-gray-500">Thank you for your prompt payment!</div>
+            <div className="mt-4">
+              <button
+                onClick={handleCopyLink}
+                className="btn-touch btn-secondary text-sm"
+              >
+                {copied ? '✓ Link Copied' : '🔗 Copy Invoice Link'}
+              </button>
+            </div>
           </div>
         )}
+
+        {/* Footer watermark */}
+        <div className="text-center py-6 mt-4">
+          <div className="text-xs text-gray-300">
+            Powered by <span className="font-semibold">PlumberPay</span> — invoicing built for plumbers
+          </div>
+        </div>
       </div>
     </div>
   )

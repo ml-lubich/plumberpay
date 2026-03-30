@@ -42,16 +42,18 @@ export default function DashboardPage() {
     <div className="max-w-2xl mx-auto px-4 py-6">
       {/* Greeting */}
       <div className="mb-6">
-        <h1 className="text-2xl font-bold text-[#1e3a5f]">Good morning! 👋</h1>
+        <h1 className="text-2xl font-bold text-[#1e3a5f]">
+          {new Date().getHours() < 12 ? 'Good morning' : new Date().getHours() < 17 ? 'Good afternoon' : 'Good evening'}! 👋
+        </h1>
         <p className="text-gray-500 text-sm">Here&apos;s your business at a glance</p>
       </div>
 
-      {/* Quick action */}
+      {/* Quick action — big touch target for field use */}
       <Link
         href="/dashboard/new"
-        className="btn-touch btn-primary w-full text-lg mb-6 py-4 shadow-md"
+        className="btn-touch btn-primary w-full text-lg mb-6 py-5 shadow-lg active:scale-[0.98] transition-transform"
       >
-        ➕ New Invoice
+        <span className="text-2xl mr-2">➕</span> New Invoice
       </Link>
 
       {/* Stats cards */}
