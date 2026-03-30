@@ -1,5 +1,3 @@
-'use client'
-
 import Link from 'next/link'
 
 const features = [
@@ -81,12 +79,12 @@ const pricingPlans = [
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#0f172a]">
       {/* Nav */}
-      <nav className="bg-brand-gradient pipe-pattern">
+      <nav className="border-b border-[#1e293b]">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center text-xl">
+            <div className="w-10 h-10 bg-[#3b82f6]/20 rounded-xl flex items-center justify-center text-xl">
               🔧
             </div>
             <span className="text-white text-xl font-bold">PlumberPay</span>
@@ -94,13 +92,13 @@ export default function LandingPage() {
           <div className="flex items-center gap-3">
             <Link
               href="/login"
-              className="text-white/90 hover:text-white font-medium px-4 py-2 rounded-lg transition"
+              className="text-[#94a3b8] hover:text-white font-medium px-4 py-2 rounded-lg transition"
             >
               Log In
             </Link>
             <Link
               href="/signup"
-              className="bg-white text-[#1e3a5f] font-semibold px-5 py-2.5 rounded-xl hover:bg-blue-50 transition"
+              className="bg-[#3b82f6] text-white font-semibold px-5 py-2.5 rounded-xl hover:bg-[#2563eb] transition shadow-lg shadow-blue-500/20"
             >
               Sign Up Free
             </Link>
@@ -109,81 +107,78 @@ export default function LandingPage() {
       </nav>
 
       {/* Hero */}
-      <section className="bg-brand-gradient pipe-pattern relative overflow-hidden">
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#3b82f6]/10 via-transparent to-[#1e40af]/10" />
         <div className="max-w-6xl mx-auto px-4 pt-16 pb-24 md:pt-24 md:pb-32 text-center relative z-10">
-          <div className="inline-block bg-white/10 backdrop-blur rounded-full px-4 py-1.5 text-blue-100 text-sm font-medium mb-6">
+          <div className="inline-block bg-[#3b82f6]/10 border border-[#3b82f6]/20 rounded-full px-4 py-1.5 text-[#60a5fa] text-sm font-medium mb-6">
             Built for plumbers, not accountants
           </div>
           <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
             Get Paid Faster.<br />
-            <span className="text-blue-200">Invoice On-Site.</span>
+            <span className="text-[#3b82f6]">Invoice On-Site.</span>
           </h1>
-          <p className="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto mb-10">
+          <p className="text-lg md:text-xl text-[#94a3b8] max-w-2xl mx-auto mb-10">
             Stop scribbling receipts and chasing payments. Create professional invoices
             in 30 seconds and get paid via link — right from the job site.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/signup"
-              className="btn-touch btn-primary bg-white !text-[#1e3a5f] hover:bg-blue-50 text-lg px-8 py-4 shadow-lg"
+              className="btn-touch btn-primary text-lg px-8 py-4 shadow-lg shadow-blue-500/25"
             >
               Start Free — No Card Needed
             </Link>
             <a
               href="#features"
-              className="btn-touch btn-secondary !border-white/30 !text-white hover:!bg-white/10 text-lg px-8 py-4"
+              className="btn-touch btn-secondary text-lg px-8 py-4"
             >
               See How It Works
             </a>
           </div>
-          <p className="text-blue-200/70 text-sm mt-6">
+          <p className="text-[#64748b] text-sm mt-6">
             Join 2,000+ plumbers already using PlumberPay
           </p>
         </div>
         {/* Phone mockup */}
         <div className="hidden md:block absolute right-8 lg:right-16 bottom-0 w-64 lg:w-72">
-          <div className="bg-white rounded-t-3xl shadow-2xl p-4 pb-0">
+          <div className="bg-[#1e293b] border border-[#334155] rounded-t-3xl shadow-2xl shadow-blue-500/10 p-4 pb-0">
             <div className="flex items-center gap-2 mb-3">
-              <div className="w-6 h-6 bg-[#2563eb] rounded-md flex items-center justify-center text-xs text-white">🔧</div>
-              <span className="text-xs font-bold text-[#1e3a5f]">PlumberPay</span>
+              <div className="w-6 h-6 bg-[#3b82f6] rounded-md flex items-center justify-center text-xs text-white">🔧</div>
+              <span className="text-xs font-bold text-white">PlumberPay</span>
             </div>
-            <div className="bg-[#f8fafc] rounded-xl p-3 mb-2">
-              <div className="text-[10px] text-gray-400 mb-1">INVOICE PP-001</div>
-              <div className="text-sm font-bold text-[#1e3a5f]">$1,242.00</div>
-              <div className="text-[10px] text-gray-500">Sarah Johnson · Water Heater</div>
+            <div className="bg-[#0f172a] rounded-xl p-3 mb-2">
+              <div className="text-[10px] text-[#64748b] mb-1">INVOICE PP-001</div>
+              <div className="text-sm font-bold text-white">$1,242.00</div>
+              <div className="text-[10px] text-[#94a3b8]">Sarah Johnson - Water Heater</div>
             </div>
-            <div className="bg-[#10b981] text-white text-center py-2 rounded-lg text-xs font-semibold">
-              ✓ Paid
+            <div className="bg-[#10b981] text-white text-center py-2 rounded-lg text-xs font-semibold mb-2">
+              Paid
             </div>
           </div>
         </div>
-        {/* Decorative water drops */}
-        <div className="absolute top-20 left-10 w-3 h-3 bg-blue-300/20 rounded-full" />
-        <div className="absolute top-40 right-20 w-5 h-5 bg-blue-300/15 rounded-full" />
-        <div className="absolute bottom-20 left-1/4 w-4 h-4 bg-blue-300/10 rounded-full" />
       </section>
 
       {/* Social proof bar */}
-      <section className="bg-white border-b">
+      <section className="border-y border-[#1e293b] bg-[#1e293b]/50">
         <div className="max-w-6xl mx-auto px-4 py-6 flex flex-wrap items-center justify-center gap-8 text-center">
           <div>
-            <div className="text-2xl font-bold text-[#1e3a5f]">$2.4M+</div>
-            <div className="text-sm text-gray-500">Invoiced this month</div>
+            <div className="text-2xl font-bold text-white">$2.4M+</div>
+            <div className="text-sm text-[#64748b]">Invoiced this month</div>
           </div>
-          <div className="w-px h-10 bg-gray-200 hidden sm:block" />
+          <div className="w-px h-10 bg-[#334155] hidden sm:block" />
           <div>
-            <div className="text-2xl font-bold text-[#1e3a5f]">30 sec</div>
-            <div className="text-sm text-gray-500">Avg. invoice creation</div>
+            <div className="text-2xl font-bold text-white">30 sec</div>
+            <div className="text-sm text-[#64748b]">Avg. invoice creation</div>
           </div>
-          <div className="w-px h-10 bg-gray-200 hidden sm:block" />
+          <div className="w-px h-10 bg-[#334155] hidden sm:block" />
           <div>
-            <div className="text-2xl font-bold text-[#1e3a5f]">1.2 days</div>
-            <div className="text-sm text-gray-500">Avg. payment time</div>
+            <div className="text-2xl font-bold text-white">1.2 days</div>
+            <div className="text-sm text-[#64748b]">Avg. payment time</div>
           </div>
-          <div className="w-px h-10 bg-gray-200 hidden sm:block" />
+          <div className="w-px h-10 bg-[#334155] hidden sm:block" />
           <div>
-            <div className="text-2xl font-bold text-[#1e3a5f]">4.9 ★</div>
-            <div className="text-sm text-gray-500">App Store rating</div>
+            <div className="text-2xl font-bold text-white">4.9 ★</div>
+            <div className="text-sm text-[#64748b]">App Store rating</div>
           </div>
         </div>
       </section>
@@ -192,19 +187,19 @@ export default function LandingPage() {
       <section id="features" className="py-20">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1e3a5f] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Everything you need. Nothing you don&apos;t.
             </h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+            <p className="text-[#94a3b8] text-lg max-w-2xl mx-auto">
               QuickBooks is overkill. A notepad is not enough. PlumberPay is the sweet spot.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((f) => (
-              <div key={f.title} className="card hover:shadow-lg transition-shadow">
+              <div key={f.title} className="card hover:border-[#3b82f6]/30 transition-colors">
                 <div className="text-3xl mb-3">{f.icon}</div>
-                <h3 className="text-lg font-bold text-[#1e3a5f] mb-2">{f.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{f.description}</p>
+                <h3 className="text-lg font-bold text-white mb-2">{f.title}</h3>
+                <p className="text-[#94a3b8] text-sm leading-relaxed">{f.description}</p>
               </div>
             ))}
           </div>
@@ -212,10 +207,10 @@ export default function LandingPage() {
       </section>
 
       {/* How It Works */}
-      <section className="bg-brand-gradient-subtle py-20">
+      <section className="bg-[#1e293b]/50 border-y border-[#1e293b] py-20">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1e3a5f] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Three taps to get paid
             </h2>
           </div>
@@ -238,11 +233,11 @@ export default function LandingPage() {
               },
             ].map((s) => (
               <div key={s.step} className="text-center">
-                <div className="w-14 h-14 bg-[#2563eb] text-white rounded-2xl flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                <div className="w-14 h-14 bg-[#3b82f6] text-white rounded-2xl flex items-center justify-center text-2xl font-bold mx-auto mb-4 shadow-lg shadow-blue-500/25">
                   {s.step}
                 </div>
-                <h3 className="text-xl font-bold text-[#1e3a5f] mb-2">{s.title}</h3>
-                <p className="text-gray-500">{s.desc}</p>
+                <h3 className="text-xl font-bold text-white mb-2">{s.title}</h3>
+                <p className="text-[#94a3b8]">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -253,10 +248,10 @@ export default function LandingPage() {
       <section id="pricing" className="py-20">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1e3a5f] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Simple, honest pricing
             </h2>
-            <p className="text-gray-500 text-lg">No hidden fees. No contracts. Cancel anytime.</p>
+            <p className="text-[#94a3b8] text-lg">No hidden fees. No contracts. Cancel anytime.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {pricingPlans.map((plan) => (
@@ -264,28 +259,28 @@ export default function LandingPage() {
                 key={plan.name}
                 className={`card relative ${
                   plan.highlighted
-                    ? 'border-2 border-[#2563eb] shadow-xl scale-105'
-                    : 'border border-gray-100'
+                    ? 'border-[#3b82f6] shadow-xl shadow-blue-500/10 scale-105'
+                    : ''
                 }`}
               >
                 {plan.highlighted && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#2563eb] text-white text-xs font-bold px-3 py-1 rounded-full">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#3b82f6] text-white text-xs font-bold px-3 py-1 rounded-full">
                     MOST POPULAR
                   </div>
                 )}
                 <div className="text-center mb-6">
-                  <h3 className="text-lg font-bold text-[#1e3a5f]">{plan.name}</h3>
-                  <p className="text-sm text-gray-400 mb-3">{plan.description}</p>
+                  <h3 className="text-lg font-bold text-white">{plan.name}</h3>
+                  <p className="text-sm text-[#64748b] mb-3">{plan.description}</p>
                   <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-4xl font-extrabold text-[#1e3a5f]">{plan.price}</span>
+                    <span className="text-4xl font-extrabold text-white">{plan.price}</span>
                     {plan.period && (
-                      <span className="text-gray-400 text-sm">{plan.period}</span>
+                      <span className="text-[#64748b] text-sm">{plan.period}</span>
                     )}
                   </div>
                 </div>
                 <ul className="space-y-3 mb-6">
                   {plan.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2 text-sm text-gray-600">
+                    <li key={f} className="flex items-start gap-2 text-sm text-[#94a3b8]">
                       <span className="text-[#10b981] mt-0.5">✓</span>
                       {f}
                     </li>
@@ -306,25 +301,25 @@ export default function LandingPage() {
       </section>
 
       {/* Comparison */}
-      <section className="bg-white py-16">
+      <section className="py-16">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-[#1e3a5f] mb-3">Why plumbers switch to PlumberPay</h2>
+            <h2 className="text-3xl font-bold text-white mb-3">Why plumbers switch to PlumberPay</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="card border-2 border-red-100 bg-red-50/30">
-              <h3 className="font-bold text-red-400 mb-4">❌ Before PlumberPay</h3>
-              <ul className="space-y-3 text-sm text-gray-600">
-                <li className="flex items-start gap-2"><span className="text-red-400">✗</span> Scribble a receipt at the job site</li>
-                <li className="flex items-start gap-2"><span className="text-red-400">✗</span> &ldquo;I&apos;ll send you an invoice later&rdquo;</li>
-                <li className="flex items-start gap-2"><span className="text-red-400">✗</span> Chase payments for weeks</li>
-                <li className="flex items-start gap-2"><span className="text-red-400">✗</span> Sunday night invoice marathons</li>
-                <li className="flex items-start gap-2"><span className="text-red-400">✗</span> Lost receipts, missed revenue</li>
+            <div className="card border-[#ef4444]/20 bg-[#ef4444]/5">
+              <h3 className="font-bold text-[#ef4444] mb-4">Before PlumberPay</h3>
+              <ul className="space-y-3 text-sm text-[#94a3b8]">
+                <li className="flex items-start gap-2"><span className="text-[#ef4444]">✗</span> Scribble a receipt at the job site</li>
+                <li className="flex items-start gap-2"><span className="text-[#ef4444]">✗</span> &ldquo;I&apos;ll send you an invoice later&rdquo;</li>
+                <li className="flex items-start gap-2"><span className="text-[#ef4444]">✗</span> Chase payments for weeks</li>
+                <li className="flex items-start gap-2"><span className="text-[#ef4444]">✗</span> Sunday night invoice marathons</li>
+                <li className="flex items-start gap-2"><span className="text-[#ef4444]">✗</span> Lost receipts, missed revenue</li>
               </ul>
             </div>
-            <div className="card border-2 border-green-100 bg-green-50/30">
-              <h3 className="font-bold text-[#10b981] mb-4">✅ After PlumberPay</h3>
-              <ul className="space-y-3 text-sm text-gray-600">
+            <div className="card border-[#10b981]/20 bg-[#10b981]/5">
+              <h3 className="font-bold text-[#10b981] mb-4">After PlumberPay</h3>
+              <ul className="space-y-3 text-sm text-[#94a3b8]">
                 <li className="flex items-start gap-2"><span className="text-[#10b981]">✓</span> Professional invoice in 30 seconds</li>
                 <li className="flex items-start gap-2"><span className="text-[#10b981]">✓</span> Send payment link before you leave</li>
                 <li className="flex items-start gap-2"><span className="text-[#10b981]">✓</span> Get paid in 1-2 days, not weeks</li>
@@ -337,27 +332,25 @@ export default function LandingPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="bg-[#1e3a5f] py-16">
+      <section className="bg-[#1e293b]/50 border-y border-[#1e293b] py-16">
         <div className="max-w-5xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <div className="text-3xl mb-4">💬</div>
-              <blockquote className="text-lg text-white font-medium mb-4 leading-relaxed">
+            <div className="card">
+              <blockquote className="text-lg text-[#f1f5f9] font-medium mb-4 leading-relaxed">
                 &ldquo;I used to spend Sunday nights doing invoices. Now I send them before I leave the job site.
                 Got paid $4,200 last week without a single follow-up call.&rdquo;
               </blockquote>
-              <div className="text-blue-200">
-                <span className="font-semibold">Mike R.</span> — Solo plumber, Austin TX
+              <div className="text-[#94a3b8]">
+                <span className="font-semibold text-white">Mike R.</span> — Solo plumber, Austin TX
               </div>
             </div>
-            <div>
-              <div className="text-3xl mb-4">💬</div>
-              <blockquote className="text-lg text-white font-medium mb-4 leading-relaxed">
+            <div className="card">
+              <blockquote className="text-lg text-[#f1f5f9] font-medium mb-4 leading-relaxed">
                 &ldquo;My guys hated QuickBooks. Too many steps. With PlumberPay they actually send invoices
                 now. Revenue is up 30% just from not forgetting to bill.&rdquo;
               </blockquote>
-              <div className="text-blue-200">
-                <span className="font-semibold">Dave K.</span> — Owner, K&amp;Sons Plumbing, Denver CO
+              <div className="text-[#94a3b8]">
+                <span className="font-semibold text-white">Dave K.</span> — Owner, K&amp;Sons Plumbing, Denver CO
               </div>
             </div>
           </div>
@@ -367,15 +360,15 @@ export default function LandingPage() {
       {/* CTA */}
       <section className="py-20">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1e3a5f] mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Ready to stop chasing payments?
           </h2>
-          <p className="text-gray-500 text-lg mb-8">
+          <p className="text-[#94a3b8] text-lg mb-8">
             Join thousands of plumbers who invoice on-site and get paid faster.
           </p>
           <Link
             href="/signup"
-            className="btn-touch btn-primary text-lg px-10 py-4 shadow-lg"
+            className="btn-touch btn-primary text-lg px-10 py-4 shadow-lg shadow-blue-500/25"
           >
             Get Started Free
           </Link>
@@ -383,19 +376,19 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-50 border-t py-10">
+      <footer className="border-t border-[#1e293b] py-10">
         <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <span className="text-xl">🔧</span>
-            <span className="font-bold text-[#1e3a5f]">PlumberPay</span>
+            <span className="font-bold text-white">PlumberPay</span>
           </div>
-          <div className="text-sm text-gray-400">
+          <div className="text-sm text-[#64748b]">
             &copy; {new Date().getFullYear()} PlumberPay. All rights reserved.
           </div>
-          <div className="flex gap-6 text-sm text-gray-500">
-            <a href="#" className="hover:text-[#2563eb]">Privacy</a>
-            <a href="#" className="hover:text-[#2563eb]">Terms</a>
-            <a href="#" className="hover:text-[#2563eb]">Support</a>
+          <div className="flex gap-6 text-sm text-[#94a3b8]">
+            <a href="#" className="hover:text-[#3b82f6] transition">Privacy</a>
+            <a href="#" className="hover:text-[#3b82f6] transition">Terms</a>
+            <a href="#" className="hover:text-[#3b82f6] transition">Support</a>
           </div>
         </div>
       </footer>

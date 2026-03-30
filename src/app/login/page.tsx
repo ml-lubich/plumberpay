@@ -37,17 +37,13 @@ export default function LoginPage() {
     }
   }
 
-  function handleDemoLogin() {
-    router.push('/dashboard')
-  }
-
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-[#0f172a]">
       {/* Nav */}
-      <nav className="bg-brand-gradient">
+      <nav className="border-b border-[#1e293b]">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center">
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center text-xl">
+            <div className="w-10 h-10 bg-[#3b82f6]/20 rounded-xl flex items-center justify-center text-xl">
               🔧
             </div>
             <span className="text-white text-xl font-bold">PlumberPay</span>
@@ -58,13 +54,13 @@ export default function LoginPage() {
       <div className="flex-1 flex items-center justify-center px-4 py-12">
         <div className="w-full max-w-sm">
           <div className="text-center mb-8">
-            <h1 className="text-2xl font-bold text-[#1e3a5f] mb-2">Welcome back</h1>
-            <p className="text-gray-500">Log in to manage your invoices</p>
+            <h1 className="text-2xl font-bold text-white mb-2">Welcome back</h1>
+            <p className="text-[#94a3b8]">Log in to manage your invoices</p>
           </div>
 
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="email" className="block text-sm font-medium text-[#94a3b8] mb-1">
                 Email
               </label>
               <input
@@ -75,11 +71,12 @@ export default function LoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                autoComplete="email"
               />
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="password" className="block text-sm font-medium text-[#94a3b8] mb-1">
                 Password
               </label>
               <input
@@ -90,11 +87,12 @@ export default function LoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
+                autoComplete="current-password"
               />
             </div>
 
             {error && (
-              <div className="bg-red-50 text-red-600 text-sm px-4 py-3 rounded-xl">
+              <div className="bg-[#ef4444]/10 border border-[#ef4444]/20 text-[#ef4444] text-sm px-4 py-3 rounded-xl">
                 {error}
               </div>
             )}
@@ -108,25 +106,9 @@ export default function LoginPage() {
             </button>
           </form>
 
-          <div className="relative my-6">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-gray-200" />
-            </div>
-            <div className="relative flex justify-center text-sm">
-              <span className="bg-[#f8fafc] px-3 text-gray-400">or</span>
-            </div>
-          </div>
-
-          <button
-            onClick={handleDemoLogin}
-            className="btn-touch btn-secondary w-full"
-          >
-            Try Demo Dashboard
-          </button>
-
-          <p className="text-center text-sm text-gray-500 mt-6">
+          <p className="text-center text-sm text-[#94a3b8] mt-6">
             Don&apos;t have an account?{' '}
-            <Link href="/signup" className="text-[#2563eb] font-medium hover:underline">
+            <Link href="/signup" className="text-[#3b82f6] font-medium hover:underline">
               Sign up free
             </Link>
           </p>

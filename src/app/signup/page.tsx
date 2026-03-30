@@ -16,6 +16,12 @@ export default function SignupPage() {
   async function handleSignup(e: React.FormEvent) {
     e.preventDefault()
     setError('')
+
+    if (password.length < 8) {
+      setError('Password must be at least 8 characters.')
+      return
+    }
+
     setLoading(true)
 
     try {
@@ -42,11 +48,11 @@ export default function SignupPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <nav className="bg-brand-gradient">
+    <div className="min-h-screen flex flex-col bg-[#0f172a]">
+      <nav className="border-b border-[#1e293b]">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center">
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center text-xl">
+            <div className="w-10 h-10 bg-[#3b82f6]/20 rounded-xl flex items-center justify-center text-xl">
               🔧
             </div>
             <span className="text-white text-xl font-bold">PlumberPay</span>
@@ -57,13 +63,13 @@ export default function SignupPage() {
       <div className="flex-1 flex items-center justify-center px-4 py-12">
         <div className="w-full max-w-sm">
           <div className="text-center mb-8">
-            <h1 className="text-2xl font-bold text-[#1e3a5f] mb-2">Create your account</h1>
-            <p className="text-gray-500">Start invoicing in under a minute</p>
+            <h1 className="text-2xl font-bold text-white mb-2">Create your account</h1>
+            <p className="text-[#94a3b8]">Start invoicing in under a minute</p>
           </div>
 
           <form onSubmit={handleSignup} className="space-y-4">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="name" className="block text-sm font-medium text-[#94a3b8] mb-1">
                 Business / Your Name
               </label>
               <input
@@ -74,11 +80,12 @@ export default function SignupPage() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
+                autoComplete="organization"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="email" className="block text-sm font-medium text-[#94a3b8] mb-1">
                 Email
               </label>
               <input
@@ -89,11 +96,12 @@ export default function SignupPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                autoComplete="email"
               />
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="password" className="block text-sm font-medium text-[#94a3b8] mb-1">
                 Password
               </label>
               <input
@@ -105,11 +113,12 @@ export default function SignupPage() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 minLength={8}
+                autoComplete="new-password"
               />
             </div>
 
             {error && (
-              <div className="bg-red-50 text-red-600 text-sm px-4 py-3 rounded-xl">
+              <div className="bg-[#ef4444]/10 border border-[#ef4444]/20 text-[#ef4444] text-sm px-4 py-3 rounded-xl">
                 {error}
               </div>
             )}
@@ -123,13 +132,13 @@ export default function SignupPage() {
             </button>
           </form>
 
-          <p className="text-center text-xs text-gray-400 mt-4">
+          <p className="text-center text-xs text-[#64748b] mt-4">
             By signing up, you agree to our Terms of Service and Privacy Policy.
           </p>
 
-          <p className="text-center text-sm text-gray-500 mt-6">
+          <p className="text-center text-sm text-[#94a3b8] mt-6">
             Already have an account?{' '}
-            <Link href="/login" className="text-[#2563eb] font-medium hover:underline">
+            <Link href="/login" className="text-[#3b82f6] font-medium hover:underline">
               Log in
             </Link>
           </p>
