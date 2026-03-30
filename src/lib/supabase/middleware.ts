@@ -33,7 +33,7 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser()
 
-  // Protect dashboard routes
+  // Protect dashboard routes (but allow /invoice/* for public payment links)
   if (
     !user &&
     request.nextUrl.pathname.startsWith('/dashboard')
