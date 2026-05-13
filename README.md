@@ -34,6 +34,7 @@ flowchart LR
 - [Invoice flow (sequence)](#invoice-flow-sequence)
 - [Invoice state](#invoice-state)
 - [Getting Started](#getting-started)
+- [🗺️ Repository map](#️-repository-map)
 
 ## Invoice flow (sequence)
 
@@ -90,3 +91,31 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
+
+
+## 🗺️ Repository map
+
+Top-level layout of `plumberpay` rendered as a Mermaid mindmap (auto-generated from the on-disk tree).
+
+```mermaid
+mindmap
+  root((plumberpay))
+    public/
+      file.svg
+      globe.svg
+      next.svg
+      vercel.svg
+      window.svg
+    src/
+      app
+      lib
+      proxy.ts
+    supabase/
+      migrations
+      schema.sql
+    files
+      README.md
+      next.config.ts
+      package.json
+      tsconfig.json
+```
