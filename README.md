@@ -31,7 +31,42 @@ flowchart LR
 
 - [Stack](#stack)
 - [Architecture](#architecture)
+- [Invoice flow (sequence)](#invoice-flow-sequence)
+- [Invoice state](#invoice-state)
 - [Getting Started](#getting-started)
+
+## Invoice flow (sequence)
+
+```mermaid
+sequenceDiagram
+    participant P as plumber
+    participant APP as /dashboard
+    participant DB as Supabase
+    participant PG as payment gateway
+    participant C as customer
+
+    P->>APP: /invoice create
+    APP->>DB: insert invoice (DRAFT)
+    APP->>PG: create checkout link
+    PG-->>APP: pay URL
+    APP-->>P: send link to customer (SMS / email)
+    C->>PG: pay (card / ACH)
+    PG-->>APP: webhook PAID
+    APP->>DB: status=PAID
+    APP-->>P: notify on dashboard
+```
+
+## Invoice state
+
+```mermaid
+stateDiagram-v2
+    [*] --> DRAFT
+    DRAFT --> SENT
+    SENT --> PAID: gateway webhook
+    SENT --> OVERDUE: > 7 days unpaid
+    OVERDUE --> PAID
+    PAID --> [*]
+```
 
 ## Stack
 
